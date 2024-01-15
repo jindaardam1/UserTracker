@@ -55,12 +55,12 @@
 
         <StackPanel Grid.Column="1" Grid.Row="1">
             <TextBox Text="Single username" Height="40" Style="{StaticResource TextBoxStyleMenu}" Margin="20 30" Name="SingleUsernameTextBox"/>
-            <Button Width="200" Style="{StaticResource ButtonStyleWithBorderRadius}" Content="SEARCH" Click="OnMultipleSearchButtonClick" VerticalAlignment="Center"/>
+            <Button Width="200" Style="{StaticResource ButtonStyleWithBorderRadius}" Content="SEARCH" Click="OnSingleSearchButtonClick" VerticalAlignment="Center"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="2">
             <TextBox Text="Multiple usernames" Height="40" Style="{StaticResource TextBoxStyleMenu}" Margin="20 30" Name="MultipleUsernameTextBox"/>
-            <Button Width="200" Style="{StaticResource ButtonStyleWithBorderRadius}" Content="SEARCH" Click="OnSingleSearchButtonClick" VerticalAlignment="Center"/>
+            <Button Width="200" Style="{StaticResource ButtonStyleWithBorderRadius}" Content="SEARCH" Click="OnMultipleSearchButtonClick" VerticalAlignment="Center"/>
         </StackPanel>
         
     </Grid>

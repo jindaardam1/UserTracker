@@ -28,12 +28,36 @@ namespace UserTracker
 
         private void OnSingleSearchButtonClick(object sender, RoutedEventArgs e)
         {
-            
+            var username = SingleUsernameTextBox.Text.Trim();
+
+            if (!username.Equals("") && !username.Equals("Single username") )
+            {
+                if (!username.Contains(','))
+                {
+                    var userList = UserManager.CreateUserList(username);
+
+                    OpenFoundUrls.OpenUrls(userList.FirstOrDefault() ?? "");
+                }
+                else
+                {
+                    MessageBox.Show("Use multiple username text box", "Multiple username error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
         
         private void OnMultipleSearchButtonClick(object sender, RoutedEventArgs e)
         {
-            
+            var usernames = MultipleUsernameTextBox.Text.Trim();
+
+            if (!usernames.Equals("") && !usernames.Equals("Multiple usernames"))
+            {
+                var userList = UserManager.CreateUserList(usernames);
+
+                foreach (var username in userList)
+                {
+                    OpenFoundUrls.OpenUrls(username);
+                }
+            }
         }
 
         private void OnSingleTextBoxGotFocus(object sender, RoutedEventArgs e)

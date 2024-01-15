@@ -9,6 +9,13 @@ namespace UserTracker
     /// </summary>
     public partial class App : Application
     {
+        [STAThread]
+        public static void Main()
+        {
+            App app = new App();
+            MainWindow mainWindow = new();
+            app.Run(mainWindow);
+        }
     }
 
 }
