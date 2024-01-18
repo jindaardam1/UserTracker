@@ -1,27 +1,35 @@
 using System.Diagnostics;
 using System.IO;
+using User;
+using UserTracker;
 
-public static class OpenFoundUrls
+public class OpenFoundUrls
 {
     public static void OpenUrls(string username)
     {
-        var urls = new[] { GetTwitterUrl(username), GetInstagramUrl(username) };
+        var twitterURL = TwitterChecker.CheckTwitterUsername(username) ? GetTwitterUrl(username) : "";
+        var instagramURL = InstagramChecker.CheckInstagramUsername(username) ? GetInstagramUrl(username) : "";
+
+        var urls = new[] { twitterURL, instagramURL };
 
         OpenUrlsInChrome(urls);
     }
-    
+
     private static void OpenUrlsInChrome(string[] urls)
     {
         try
         {
-            Process.Start(FindChromePath(), $"--new-window {string.Join(" ", urls)}");
+            if (urls.Any(url => !string.IsNullOrEmpty(url)))
+            {
+                Process.Start(FindChromePath(), $"--new-window {string.Join(" ", urls)}");
+            }
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error opening URLs in Google Chrome: {ex.Message}");
         }
     }
-    
+
     private static string FindChromePath()
     {
         string[] commonPaths = {

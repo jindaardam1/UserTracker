@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UserTracker.view;
 
 namespace UserTracker
 {
@@ -53,10 +54,8 @@ namespace UserTracker
             {
                 var userList = UserManager.CreateUserList(usernames);
 
-                foreach (var username in userList)
-                {
-                    OpenFoundUrls.OpenUrls(username);
-                }
+                UserAccounts ua = new UserAccounts(userList);
+                ua.Show();
             }
         }
 

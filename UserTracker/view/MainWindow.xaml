@@ -40,7 +40,7 @@
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="140" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -54,12 +54,13 @@
         <TextBlock Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="#B8D600" Margin="20">UserTracker</TextBlock>
 
         <StackPanel Grid.Column="1" Grid.Row="1">
-            <TextBox Text="Single username" Height="40" Style="{StaticResource TextBoxStyleMenu}" Margin="20 30" Name="SingleUsernameTextBox"/>
+            <TextBox Text="Single username" Height="40" Style="{StaticResource TextBoxStyleMenu}" Margin="20 30 20 55" Name="SingleUsernameTextBox"/>
             <Button Width="200" Style="{StaticResource ButtonStyleWithBorderRadius}" Content="SEARCH" Click="OnSingleSearchButtonClick" VerticalAlignment="Center"/>
         </StackPanel>
 
+        
         <StackPanel Grid.Column="1" Grid.Row="2">
-            <TextBox Text="Multiple usernames" Height="40" Style="{StaticResource TextBoxStyleMenu}" Margin="20 30" Name="MultipleUsernameTextBox"/>
+            <TextBox Text="Multiple usernames" Height="40" Style="{StaticResource TextBoxStyleMenu}" Margin="20 30 20 55" Name="MultipleUsernameTextBox"/>
             <Button Width="200" Style="{StaticResource ButtonStyleWithBorderRadius}" Content="SEARCH" Click="OnMultipleSearchButtonClick" VerticalAlignment="Center"/>
         </StackPanel>
         

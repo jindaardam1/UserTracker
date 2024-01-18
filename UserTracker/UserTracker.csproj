@@ -12,4 +12,8 @@
     <None Include="bin\Release\net8.0-windows\images\crosshair.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Selenium.WebDriver" Version="4.16.2" />
+  </ItemGroup>
+
 </Project>
