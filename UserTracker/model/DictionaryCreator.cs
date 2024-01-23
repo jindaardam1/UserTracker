@@ -1,4 +1,4 @@
-namespace User;
+namespace UserTracker.model;
 
 public static class DictionaryCreator
 { // TODO: Optimise the dictionary generation (someday)
